@@ -10,6 +10,7 @@ Welcome to NT Sketchbook, a repository designed to empower designers and develop
 -   [Get started](#Get-started)
 -   [Contributing](#Contributing)
 -   [License](#License)
+-   [Wall of Fame](WALL_OF_FAME.md)
 
 ## Overview
 
@@ -49,6 +50,11 @@ Join our vibrant community of creators! Your contributions can make a significan
 -   Check [GIT](GIT.md) conversion for more details
 
 3. **Open a Pull Request.**
+
+## Wall of Fame
+
+Check out our [Wall of Fame](WALL_OF_FAME.md) to see the community members who
+have made the most contributions.
 
 ## License
 
