@@ -1,30 +1,32 @@
+@use '../variables' as vars;
+
 .nt-widget-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
+    gap: vars.$nt-spacing-md;
+    padding: vars.$nt-spacing-md;
     justify-content: flex-start;
 
     .nt-card {
-        flex: 1 1 calc(25% - 1rem);
+        flex: 1 1 calc(25% - vars.$nt-spacing-md);
         min-width: 15.625rem;
         max-width: 100%;
-        background: white;
-        border: 0.0625rem solid #ddd;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        box-shadow: 0 0.125rem 0.25rem rgba(0 0 0 / 10%);
+        background: vars.$nt-bg-body;
+        border: vars.$nt-border-width solid vars.$nt-border-bold;
+        border-radius: vars.$nt-border-radius-lg;
+        padding: vars.$nt-spacing-md;
+        box-shadow: vars.$nt-box-shadow-sm;
         display: flex;
         flex-direction: column;
     }
 
-    @media (max-width <= 64rem) {
+    @media (max-width <= #{vars.$nt-breakpoint-lg}) {
         .nt-card {
-            flex: 1 1 calc(50% - 1rem);
+            flex: 1 1 calc(50% - vars.$nt-spacing-md);
         }
     }
 
-    @media (max-width <= 48rem) {
+    @media (max-width <= #{vars.$nt-breakpoint-md}) {
         .nt-card {
             flex: 1 1 100%;
         }
