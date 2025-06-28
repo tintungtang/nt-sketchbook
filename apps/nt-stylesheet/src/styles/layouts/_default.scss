@@ -1,4 +1,6 @@
 @use 'side-menu' as side-menu;
+@use '../utilities' as utils;
+@use '../variables' as vars;
 
 @mixin create-main-layout($overlay: false) {
     .nt-main-page {
@@ -16,8 +18,8 @@
             justify-content: space-between;
             align-items: center;
             background: var(--nt-bg-nav, #333);
-            color: white;
-            padding: 1rem;
+            color: vars.$nt-color-white;
+            padding: vars.$nt-spacing-md;
 
             &-left {
                 display: flex;
@@ -27,57 +29,58 @@
             &-toggle {
                 background: none;
                 border: none;
-                font-size: 1.5rem;
-                color: white;
+
+                @include utils.font-size('xl');
+                color: vars.$nt-color-white;
                 cursor: pointer;
-                margin-right: 1rem;
+                margin-right: vars.$nt-spacing-md;
             }
 
             &-logo {
-                font-size: 1.2rem;
+                @include utils.font-size('lg');
                 font-weight: bold;
             }
 
             &-right {
                 display: flex;
                 align-items: center;
-                gap: 1.5rem;
+                gap: vars.$nt-spacing-lg;
             }
 
             &-links {
                 list-style: none;
                 display: flex;
-                gap: 1rem;
+                gap: vars.$nt-spacing-md;
 
                 li {
                     display: inline;
                 }
 
                 a {
-                    color: white;
+                    color: vars.$nt-color-white;
                     text-decoration: none;
-                    font-size: 1rem;
+
+                    @include utils.font-size('md');
                 }
             }
 
             &-user {
                 display: flex;
                 align-items: center;
-                gap: 0.5rem;
+                gap: vars.$nt-spacing-xs;
                 cursor: pointer;
             }
 
             &-avatar {
-                width: 2.5rem;
-                height: 2.5rem;
+                @include utils.avatar-size(2.5rem);
                 border-radius: 50%;
                 border: 0.125rem solid var(--nt-primary, #007bff);
                 object-fit: cover;
             }
 
             &-username {
-                font-size: 1rem;
-                color: var(--nt-text-color, white);
+                @include utils.font-size('md');
+                color: var(--nt-text-color, vars.$nt-color-white);
             }
         }
 
@@ -95,12 +98,12 @@
                     top: 0;
                     width: 16.25rem;
                     height: 100%;
-                    background: var(--nt-bg-sidebar, white);
-                    box-shadow: 0.125rem
-                        0
-                        0.3125rem
-                        rgba(0 0 0 / 10%);
-                    transition: left 0.3s ease-in-out;
+                    background: var(
+                        --nt-bg-sidebar,
+                        vars.$nt-bg-body
+                    );
+                    box-shadow: vars.$nt-box-shadow-sm;
+                    transition: left vars.$nt-transition-medium;
 
                     &.active {
                         left: 0;
@@ -109,8 +112,11 @@
 
                 .nt-main-page-content {
                     grid-area: nt-main-page-content;
-                    padding: 1rem;
-                    background: var(--nt-bg-content, white);
+                    padding: vars.$nt-spacing-md;
+                    background: var(
+                        --nt-bg-content,
+                        vars.$nt-bg-body
+                    );
                 }
 
                 .nt-main-page-overlay {
@@ -129,19 +135,23 @@
             } @else {
                 .nt-main-page-side-menu {
                     grid-area: nt-main-page-side-menu;
-                    background: var(--nt-bg-sidebar, white);
-                    box-shadow: 0.125rem
-                        0
-                        0.3125rem
-                        rgba(0 0 0 / 10%);
-                    transition: left 0.3s ease-in-out;
+                    background: var(
+                        --nt-bg-sidebar,
+                        vars.$nt-bg-body
+                    );
+                    box-shadow: vars.$nt-box-shadow-sm;
+                    transition: left vars.$nt-transition-medium;
                 }
 
                 .nt-main-page-content {
                     grid-area: nt-main-page-content;
-                    padding: 1rem;
-                    background: var(--nt-bg-content, white);
-                    transition: margin-left 0.3s ease-in-out;
+                    padding: vars.$nt-spacing-md;
+                    background: var(
+                        --nt-bg-content,
+                        vars.$nt-bg-body
+                    );
+                    transition: margin-left
+                        vars.$nt-transition-medium;
                 }
 
                 .nt-main-page-side-menu.active {
