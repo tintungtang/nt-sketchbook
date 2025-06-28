@@ -1,5 +1,7 @@
 # NT Stylesheet Documentation
 
+This package contains the styling library used across NT Sketchbook. See the [project README](../../README.md) for repository setup instructions.
+
 This directory contains documentation for the **NT Stylesheet** package, which provides the core CSS framework and design tokens for the NT Sketchbook ecosystem.
 
 ---
@@ -103,3 +105,5 @@ You can customize NT Stylesheet in several ways:
 -   Override CSS variables using `:root` or component scopes
 -   Extend component styles using custom classes
 -   Import SCSS files and modify tokens before compilation (Sass users)
+
+For detailed component guides, visit the [documentation folder](docs/README.md).

@@ -1,6 +1,7 @@
 # NT Sketchbook How-Tos
 
-This document provides step-by-step guides for common tasks when using the NT Sketchbook
+This document provides step-by-step guides for common tasks when using the NT Sketchbook.
+Refer back to the [project README](README.md) for an overview and to the component docs under [apps/nt-stylesheet/docs](apps/nt-stylesheet/docs/README.md) for usage examples.
 
 ## Table of Contents
 
@@ -17,6 +18,12 @@ This document provides step-by-step guides for common tasks when using the NT Sk
 - Name the file according to the component name (e.g., `_nt-button.scss`).
 - Create a new markdown file for the component (e.g., `Button.md`).
 
-### Step 2: Create the Component that uses the CSS located in the `apps/nt-headless-ui` directory
+### Step 2: Create the Component
 
-### Step 3: Create the Component Stories in `apps/nt-headless-ui`
+- Build your React or Vue component inside `apps/nt-headless-ui` and import the new stylesheet file.
+- Follow the existing folder structure to keep components organized.
+
+### Step 3: Document the Component
+
+- Add stories under `apps/nt-headless-ui` so the component appears in Storybook.
+- Update or create the corresponding Markdown file in `apps/nt-stylesheet/docs` with usage examples.

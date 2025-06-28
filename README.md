@@ -1,43 +1,27 @@
-# **NT Sketchbook**
+![img-1.png](docs/img-1.png)
 
-Also known as the NashTech Design Ecosystem
+Also known as the NashTech Design System
 
-Welcome to NT Sketchbook, a repository designed to empower designers and developers to bring their creative visions to life with ease and efficiency.
+Welcome to NT Sketchbook, the repository designed to empower designers and developers to bring their creative visions to life with ease and efficiency.
 
 ## Table of Contents
 
 -   [Overview](#Overview)
--   [Get started](#Get-started)
--   [Contributing](#Contributing)
--   [License](#License)
+-   [Get started](#get-started)
+-   [Contributing](#contributing)
+-   [License](#license)
 
 ## Overview
 
 NT Sketchbook is your ultimate tool for application development. We provide:
 
--   CSS framework delivered with NashTech Design Style Guides as the default theme (nt-theme).
--   UI Components: Basic components include buttons, labels, inputs, etc.
+-   [NT Stylesheet Docs](apps/nt-stylesheet/docs/README.md).: A CSS framework delivered with NashTech Design Style Guides as the default theme (nt-theme).
+-   NT UI Components: A set of prebuilt components include buttons, labels, inputs, etc.
 -   CLI: Utilities for application scaffolding and component management.
--   Checkout our [Story Book](https://nashtech-storybook.netlify.app/)
 
-## Getting23 started
+![img-2.png](docs/img-2.png)
 
-1. **Prerequisites**
-
--   NodeJS >=20
-
-2. **Clone the Repository:**
-
-```bash
-https://github.com/nashtech-garage/nt-sketchbook
-```
-
-4. **Bootstrap it:**
-
-```bash
-cd nt-sketchbook
-pnpm bootstrap
-```
+## Get Started
 
 ## Contributing
 
@@ -49,6 +33,8 @@ Join our vibrant community of creators! Your contributions can make a significan
 -   Check [GIT](GIT.md) conversion for more details
 
 3. **Open a Pull Request.**
+
+For detailed steps on adding new components, see our [How-Tos](HOWTOS.md).
 
 ## License
 
