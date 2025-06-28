@@ -1,4 +1,6 @@
 @use 'side-menu' as side-menu;
+@use '../variables' as vars;
+@use '../utilities' as utils;
 
 @mixin nt-layout-push-menu($menu-width: 16.25rem) {
     .nt-layout {
@@ -18,8 +20,8 @@
         &-nav {
             grid-area: nav;
             background: var(--nt-bg-nav, #333);
-            color: white;
-            padding: 1rem;
+            color: vars.$nt-color-white;
+            padding: vars.$nt-spacing-md;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -27,8 +29,8 @@
 
         &-content {
             grid-area: content;
-            padding: 1rem;
-            background: var(--nt-bg-content, #f9f9f9);
+            padding: vars.$nt-spacing-md;
+            background: var(--nt-bg-content, vars.$nt-bg-light);
             overflow-y: auto;
         }
 
@@ -38,7 +40,7 @@
             .nt-side-menu {
                 visibility: visible;
                 opacity: 1;
-                transition: opacity 0.3s ease;
+                transition: opacity vars.$nt-transition-medium;
             }
         }
     }
