@@ -1,85 +1,84 @@
-# **NT Sketchbook**
+# NT Sketchbook
 
-Also known as the NashTech Design Ecosystem
+_Also known as the NashTech Design Ecosystem_
 
 Welcome to NT Sketchbook, a repository designed to empower designers and developers to bring their creative visions to life with ease and efficiency.
 
 ## Table of Contents
 
-- [Overview](#Overview)
-- [Installation](#Installation)
-- [Storybook](#Storybook)
-- [Contributing](#Contributing)
-- [License](#License)
+-   [Overview](#Overview)
+-   [Installation](#Installation)
+-   [Storybook](#Storybook)
+-   [Contributing](#Contributing)
+-   [License](#License)
 
 ## Overview
 
-NT Sketchbook is your ultimate tool for application development. We provide:
+NT Sketchbook is an essential toolkit for application development. It provides:
 
--   CSS framework delivered with NashTech Design Style Guides as the default theme (nt-theme).
--   UI Components: Basic components include buttons, labels, inputs, etc.
--   CLI: Utilities for application scaffolding and component management.
+-   A CSS framework delivered with NashTech Design Style Guides as the default theme (`nt-theme`).
+-   A library of UI components such as buttons, labels and input controls.
+-   A CLI with utilities for application scaffolding and component management.
 
 ## Installation
 
 Getting started with NT Sketchbook is simple and straightforward:
 
-1. **Install node, nx, pnpm**
+1. **Install Node.js**
 
--   Install Node
+    Use Node Version Manager (`nvm`) to set up the recommended Node 20 release:
 
-```bash
-nvm install 20
-nvm use 20
-nvm alias default 20
-```
+    ```bash
+    nvm install 20
+    nvm use 20
+    nvm alias default 20
+    ```
 
--   Install pnpm
+2. **Install pnpm**
 
-```bash
-npm install -g pnpm
-pnpm --version
-```
+    ```bash
+    npm install -g pnpm
+    pnpm --version
+    ```
 
--   Install nx
+3. **Install Nx**
 
-```bash
-pnpm add -g nx
-nx --version
+    ```bash
+    pnpm add -g nx
+    nx --version
+    ```
 
-```
+4. **Clone the Repository**
 
-2. **Clone the Repository:**
-```bash
-https://github.com/nashtech-garage/nt-sketchbook
-```
-3. **Navigate to the Project Directory:**
-```bash
-cd nt-sketchbook
-```
-4. **Install Essential Dependencies:**
-```bash
-pnpm bootstrap
-```
+    ```bash
+    git clone https://github.com/nashtech-garage/nt-sketchbook.git
+    cd nt-sketchbook
+    ```
+
+5. **Install Essential Dependencies**
+
+    ```bash
+    pnpm bootstrap
+    ```
 
 ## Storybook
 
-1. **Build stylesheet and headlessui**
+1. **Build the stylesheet and Headless UI components**
 
-    ```bash
-     pnpm run build:headlessui-storybook
-     pnpm run  build:headlessui-lib
-     pnpm run  build:stylesheet:lib
-     pnpm run  build:stylesheet-preview
-    ```
+```bash
+pnpm run build:headlessui-storybook
+pnpm run build:headlessui-lib
+pnpm run build:stylesheet:lib
+pnpm run build:stylesheet-preview
+```
 
-2. Run storybook
+2. **Run Storybook**
 
 ```bash
 nx run nt-headless-ui:storybook
 ```
 
-Then, open your favorite web browser and navigate to ` http://localhost:56053/` to immerse yourself in the NT Sketchbook experience.
+Then, open your favorite web browser and navigate to `http://localhost:56053/` to immerse yourself in the NT Sketchbook experience.
 
 ## Contributing
 
