@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "components": [
+        {
+            "name": "Alert",
+            "id": "alert",
+            "type": "Control"
+        },
+        {
+            "name": "Avatar",
+            "id": "avatar",
+            "type": "Control"
+        }
+    ]
+}
