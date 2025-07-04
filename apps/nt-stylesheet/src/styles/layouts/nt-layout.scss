@@ -1,47 +1,58 @@
 @use 'side-menu' as side-menu;
 @use '../variables' as vars;
 @use '../utilities' as utils;
+@use './page' as page;
 
-@mixin nt-layout-push-menu($menu-width: 16.25rem) {
-    .nt-layout {
-        display: grid;
-        grid-template: auto 1fr/ 0 1fr;
-        grid-template-areas:
-            'side-menu nav'
-            'side-menu content';
-        height: 100%;
+.nt-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr; // Sidebar | Page content
+    grid-template-rows: 100vh;        // Single full-height row
+    grid-template-areas: "nt-navbar nt-main";
+    height: 100vh;
+}
 
-        .nt-side-menu {
-            grid-area: side-menu;
+.nt-navbar {
+    grid-area: nt-navbar;
+    @include side-menu.create-side-menu();
+}
 
-            @include side-menu.create-side-menu;
-        }
+.nt-main {
+    display: grid;
+    grid-area: nt-main;
+    grid-template-areas:
+    "nt-main-header"
+    "nt-main-container";
+    grid-template-rows: auto 1fr;
+    height: 100%;
 
-        &-nav {
-            grid-area: nav;
-            background: var(--nt-bg-nav, #333);
-            color: vars.$nt-color-white;
-            padding: vars.$nt-spacing-md;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    &-header {
+        grid-area: nt-main-header;
+        display: flex;
+        padding: vars.$nt-spacing-lg;
+        justify-content: space-between;
+        align-items: center;
 
-        &-content {
-            grid-area: content;
-            padding: vars.$nt-spacing-md;
-            background: var(--nt-bg-content, vars.$nt-bg-light);
-            overflow-y: auto;
-        }
+        .greeting {
+            font-size: 1.25rem;
+            font-weight: vars.$nt-font-weight-bold;
+            color: vars.$nt-color-primary-100;
 
-        &.menu-active {
-            grid-template-columns: $menu-width 1fr;
-
-            .nt-side-menu {
-                visibility: visible;
-                opacity: 1;
-                transition: opacity vars.$nt-transition-medium;
-            }
         }
     }
+
+    &-container {
+        grid-area: nt-main-container;
+        padding-left: vars.$nt-spacing-lg;
+        padding-bottom: vars.$nt-spacing-lg;
+        padding-right: vars.$nt-spacing-lg;
+        @include page.nt-page; // Assuming this mixin includes padding, background, etc.
+    }
 }
+
+.nt-footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+    color: #999;
+}
+
