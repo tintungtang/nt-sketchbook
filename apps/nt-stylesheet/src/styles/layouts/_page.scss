@@ -7,18 +7,18 @@
         display: grid;
         grid-template-rows: auto auto auto 1fr;
         grid-template-areas:
-        'nt-page-header'
-        'nt-page-bookmarks'
-        'nt-page-filters'
-        'nt-page-body';
+            'nt-page-header'
+            'nt-page-bookmarks'
+            'nt-page-filters'
+            'nt-page-body';
 
         &-header {
             grid-area: nt-page-header;
             display: grid;
-            grid-template-columns: auto 240px;
+            grid-template-columns: auto 15rem;
             grid-template-areas:
-                "nt-title nt-header-actions"
-                "nt-sub-title nt-header-actions";
+                'nt-title nt-header-actions'
+                'nt-sub-title nt-header-actions';
 
             .nt-title {
                 @include utils.font-size('2xl');
@@ -29,6 +29,7 @@
 
             .nt-sub-title {
                 grid-area: nt-sub-title;
+
                 @include utils.font-size('md');
                 font-weight: vars.$nt-font-weight-light;
                 color: vars.$nt-color-gray-50;
@@ -118,9 +119,8 @@
             }
 
             &-content {
-
+                @include utils.font-size('md');
             }
-
         }
     }
 
@@ -131,4 +131,3 @@
         @include effects.fade-in;
     }
 }
-

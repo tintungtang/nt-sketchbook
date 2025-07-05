@@ -59,6 +59,12 @@
         }
     }
 
+    &-sun {
+        &::before {
+            content: '\F05A8';
+        }
+    }
+
     &-accounts {
         &::before {
             content: '\F0B58';
@@ -97,19 +103,19 @@
 
     &-chevron-right {
         &::before {
-            content:"\F0142"
+            content: '\F0142';
         }
     }
 
     &-menu {
         &::before {
-            content:"\F035C"
+            content: '\F035C';
         }
     }
 
     &-bell {
         &::before {
-            content:"\F009C"
+            content: '\F009C';
         }
     }
 }
