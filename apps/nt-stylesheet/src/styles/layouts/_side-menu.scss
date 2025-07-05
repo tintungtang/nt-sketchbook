@@ -39,11 +39,15 @@
         grid-template-columns: auto auto;
         background: vars.$nt-color-white;
         height: 4.25rem;
-        padding: vars.$nt-spacing-lg 0;
+        min-height: 4.25rem;
+        align-items: center;
 
         &-logo {
             display: grid;
             grid-area: nt-navbar-header-logo;
+            > img {
+                height: 2.25rem;
+            }
         }
 
         &-buttons {
