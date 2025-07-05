@@ -100,7 +100,7 @@
         <div class="nt-navbar-footer">
             <div class="nt-copyright">
                 <p>© NashTech 2025</p>
-                <p>Version 0.0.1</p>
+                <p id="sdk-version">Version 0.0.1</p>
             </div>
             <div class="nt-branding">
                 <img class="nt-logo" />
@@ -114,11 +114,22 @@
     <!-- Main Container -->
     <main class="nt-main">
         <header class="nt-main-header">
-            <div class="greeting">Good morning, Alexandra!</div>
-            <div class="header-actions">
-                <button>Customize</button>
-                <button>Download Report</button>
+            <div class="nt-main-header-greeting">Good morning, Alexandra!</div>
+            <div class="nt-main-header-actions">
                 <!-- Theme switch, avatars -->
+                <div>
+                    <i class="nti nti-sun mr-2"></i>
+                    <span class="nt-label nt-label-hint">Light</span>
+                    <label class="nt-switch ml-2" for="nt-theme-toggle">
+                        <input id="nt-theme-toggle" type="checkbox" class="nt-switch-input" />
+                        <span class="nt-switch-slider"></span>
+                    </label>
+                </div>
+
+                <div class="nt-avatar-wrapper-xs ml-4">
+                    <img class="nt-avatar nt-avatar-xs" src="https://media.istockphoto.com/id/1180778899/vi/anh/c%C3%B4-g%C3%A1i-tr%E1%BA%BB-ch%E1%BB%A5p-%E1%BA%A3nh.jpg?s=1024x1024&w=is&k=20&c=JUsS1ZSXOkVqeBRUF3OGo63ZuaV7iQpI4rBChMBd12s=" />
+                    <span class="nt-avatar-status nt-avatar-status--online"></span>
+                </div>
             </div>
         </header>
         <div class="nt-main-container" id="main-container">
@@ -167,6 +178,17 @@
 </div>
 
 <script type="text/javascript">
+    const updateVersion = () => {
+        return fetch('package.json')
+            .then((res) => res.json())
+            .then((data) => {
+                const skdVersionEl = document.getElementById('sdk-version')
+                if (skdVersionEl) {
+                    skdVersionEl.innerText = data.version
+                }
+            });
+    }
+
     const renderComponentsList = (data) => {
         const title = document.getElementById('nt-widget-title');
         const list = document.getElementById('nt-widget-list');
@@ -233,6 +255,7 @@
         }
         return true;
     }
+
     const setMainMenuItemActive = (el) => {
         const activated = document.getElementsByClassName('nt-navbar-item active');
 
@@ -276,6 +299,7 @@
         }
     }
 
+    updateVersion()
     initWidgetsList()
         .then(initMenu)
 </script>

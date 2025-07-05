@@ -19,7 +19,6 @@
     height: 100%;
     background: vars.$nt-bg-side-menu;
     color: vars.$nt-text-primary;
-    //transform: translateX(-100%);
     display: flex;
     flex-direction: column;
     box-shadow: 0.125rem 0 0.3125rem rgba(0 0 0 / 20%);
@@ -32,7 +31,6 @@
         animation: slide-in 0.3s ease-in-out;
     }
 
-    /* === Header Section === */
     &-header {
         display: grid;
         grid-template-areas: 'nt-navbar-header-logo nt-navbar-header-buttons';
@@ -45,6 +43,7 @@
         &-logo {
             display: grid;
             grid-area: nt-navbar-header-logo;
+
             > img {
                 height: 2.25rem;
             }
@@ -58,7 +57,6 @@
         }
     }
 
-    /* === Search Bar === */
     &-search {
         width: 100%;
         padding: 0.5rem;
@@ -69,7 +67,6 @@
         color: vars.$nt-text-primary;
     }
 
-    /* === Menu Groups === */
     &-groups {
         flex-grow: 1;
         display: flex;
@@ -96,7 +93,27 @@
         margin: 0;
     }
 
-    /* === Menu Items === */
+    .nt-navbar-secondary {
+        display: none;
+        flex-direction: column;
+        padding-left: 1.5rem;
+        margin-top: 0.25rem;
+
+        .nt-navbar-secondary-item {
+            cursor: pointer;
+            padding: vars.$nt-spacing-sm;
+
+            @include utils.font-size('md');
+            color: vars.$nt-text-body;
+
+            &:hover,
+            &.active {
+                color: vars.$nt-color-secondary-100;
+                font-weight: vars.$nt-font-weight-bold;
+            }
+        }
+    }
+
     &-item {
         cursor: pointer;
         padding: vars.$nt-spacing-sm;
@@ -104,6 +121,11 @@
         display: flex;
         align-items: center;
         gap: 0.75rem;
+
+        &:hover,
+        &.active {
+            @include current-focus-item;
+        }
 
         a {
             flex-grow: 1;
@@ -119,7 +141,6 @@
             }
         }
 
-        /* === Icon Before Item Text === */
         &-icon {
             display: inline-flex;
             align-items: center;
@@ -130,7 +151,6 @@
             color: vars.$nt-color-gray-60;
         }
 
-        /* === Badge After Item Text === */
         &-badge {
             background-color: vars.$nt-color-secondary-80;
             color: vars.$nt-color-white;
@@ -140,25 +160,9 @@
             border-radius: vars.$nt-border-radius-sm;
         }
 
-        &:hover {
-            @include current-focus-item;
-        }
-
-        &.active {
-            @include current-focus-item;
-        }
-
         &.nt-navbar-primary {
             flex-direction: column;
             align-items: stretch;
-
-            &.active.open {
-                .nt-navbar-secondary {
-                    margin: calc(-1 * #{vars.$nt-spacing-sm});
-                    margin-top: 0;
-                    background-color: vars.$nt-color-white;
-                }
-            }
 
             .nt-navbar-link {
                 display: flex;
@@ -166,38 +170,18 @@
                 justify-content: space-between;
                 width: 100%;
             }
-
-            .nt-navbar-secondary {
-                display: none;
-                flex-direction: column;
-                padding-left: 1.5rem;
-                margin-top: 0.25rem;
-
-                .nt-navbar-secondary-item {
-                    cursor: pointer;
-                    padding: vars.$nt-spacing-sm;
-                    @include utils.font-size('md');
-                    color: vars.$nt-text-body;
-
-                    &:hover {
-                        color: vars.$nt-color-secondary-100;
-                        font-weight: vars.$nt-font-weight-bold;
-                    }
-
-                    &.active {
-                        color: vars.$nt-color-secondary-100;
-                        font-weight: vars.$nt-font-weight-bold;
-                    }
-                }
-            }
-
-            &.open > .nt-navbar-secondary {
-                display: flex;
-            }
         }
     }
 
-    /* === Footer Section === */
+    .nt-navbar-item.nt-navbar-primary.open > .nt-navbar-secondary,
+    .nt-navbar-item.nt-navbar-primary.active.open
+        > .nt-navbar-secondary {
+        display: flex;
+        margin: calc(-1 * #{vars.$nt-spacing-sm});
+        margin-top: 0;
+        background-color: vars.$nt-color-white;
+    }
+
     &-footer {
         @include utils.font-size('sm');
         padding: 1rem 0;
@@ -210,7 +194,6 @@
     }
 }
 
-/* === Keyframes for Sliding Animation === */
 @keyframes slide-in {
     from {
         transform: translateX(-100%);
