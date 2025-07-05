@@ -7,9 +7,10 @@ Welcome to NT Sketchbook, a repository designed to empower designers and develop
 ## Table of Contents
 
 -   [Overview](#Overview)
--   [Get started](#Get-started)
--   [Contributing](#Contributing)
--   [License](#License)
+-   [Get started](#get-started)
+-   [How-Tos](HOWTOS.md)
+-   [Contributing](#contributing)
+-   [License](#license)
 
 ## Overview
 
@@ -20,24 +21,28 @@ NT Sketchbook is your ultimate tool for application development. We provide:
 -   CLI: Utilities for application scaffolding and component management.
 -   Checkout our [Story Book](https://nashtech-storybook.netlify.app/)
 
-## Getting23 started
+## Get started
 
 1. **Prerequisites**
 
 -   NodeJS >=20
 
-2. **Clone the Repository:**
+2. **Clone the Repository**
 
 ```bash
 https://github.com/nashtech-garage/nt-sketchbook
 ```
 
-4. **Bootstrap it:**
+3. **Bootstrap it**
 
 ```bash
 cd nt-sketchbook
 pnpm bootstrap
 ```
+
+4. **Explore the Style Guide**
+
+-   Detailed component documentation is available in [NT Stylesheet Docs](apps/nt-stylesheet/docs/README.md).
 
 ## Contributing
 
@@ -49,6 +54,8 @@ Join our vibrant community of creators! Your contributions can make a significan
 -   Check [GIT](GIT.md) conversion for more details
 
 3. **Open a Pull Request.**
+
+For detailed steps on adding new components, see our [How-Tos](HOWTOS.md).
 
 ## License
 

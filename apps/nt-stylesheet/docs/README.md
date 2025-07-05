@@ -1,10 +1,6 @@
-Here is your updated **NT Stylesheet Documentation** with improved structure, clearer formatting, and added placeholder links and examples:
-
----
-
 # NT Stylesheet Documentation
 
-This directory contains documentation for the **NT Stylesheet** package, which provides the core CSS framework and design tokens for the NT Sketchbook ecosystem.
+This directory contains documentation for the **NT Stylesheet** package, which provides the core CSS framework and design tokens for the NT Sketchbook ecosystem. For repository setup instructions see the [root README](../../README.md).
 
 ---
 
@@ -61,13 +57,18 @@ Example:
 
 NT Stylesheet includes a growing list of reusable and composable UI components.
 
-### Common Components
+### Component Guides
 
-| Component | Description             | Example Class |
-| --------- | ----------------------- | ------------- |
-| Name      | component's description | examples      |
-
-_To be updated._
+- [Alert](alert.md)
+- [Avatar](avatar.md)
+- [Breadcrumb](breadcrumb.md)
+- [Button](button.md)
+- [Checkbox](checkbox.md)
+- [Input](input.md)
+- [Label](label.md)
+- [Modal](modal.md)
+- [Radio Group](radio-group.md)
+- [Switch](switch.md)
 
 ---
 
@@ -83,4 +84,4 @@ You can customize NT Stylesheet in several ways:
 
 ## Contributions
 
--   Following repository's bootstrap instruction
+Refer to the [How-Tos](../../HOWTOS.md) document for steps on adding new components and updating this documentation.
