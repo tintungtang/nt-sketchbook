@@ -144,32 +144,146 @@
                 <div class="nt-page-body" id="page-body">
                     <!-- Filters -->
                     <section class="nt-section filters">
-                    <!-- Filter controls -->
+                        <div class="flex flex-wrap gap-4 items-end">
+                            <input type="text" class="nt-input nt-input-default" placeholder="Search..." />
+                            <input type="date" class="nt-input nt-input-default" />
+                            <input type="date" class="nt-input nt-input-default" />
+                            <button class="nt-button nt-button-primary">Apply</button>
+                        </div>
                     </section>
                     <!-- Metrics -->
                     <section class="nt-section metrics">
-                    <!-- Single metrics and quick stats -->
+                        <div class="grid gap-4 sm:grid-cols-3">
+                            <div class="nt-card-small">
+                                <div class="nt-card-header">
+                                    <span class="nt-card-icon">📈</span>
+                                    <h3 class="nt-card-title">Sales</h3>
+                                </div>
+                                <div class="nt-card-content">
+                                    <p>Total: <strong>$12.4k</strong></p>
+                                    <p>Change: <span class="text-green-500">+5%</span></p>
+                                </div>
+                            </div>
+                            <div class="nt-card-small">
+                                <div class="nt-card-header">
+                                    <span class="nt-card-icon">👥</span>
+                                    <h3 class="nt-card-title">Users</h3>
+                                </div>
+                                <div class="nt-card-content">
+                                    <p>Active: <strong>1,230</strong></p>
+                                    <p>Change: <span class="text-green-500">+1.2%</span></p>
+                                </div>
+                            </div>
+                            <div class="nt-card-small">
+                                <div class="nt-card-header">
+                                    <span class="nt-card-icon">🛒</span>
+                                    <h3 class="nt-card-title">Orders</h3>
+                                </div>
+                                <div class="nt-card-content">
+                                    <p>Today: <strong>320</strong></p>
+                                    <p>Change: <span class="text-red-500">-2%</span></p>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <!-- Charts -->
                     <section class="nt-section charts">
-                    <!-- Detail charts, graphs -->
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <div class="nt-card-default">
+                                <div class="nt-card-header">
+                                    <span class="nt-card-title">Monthly Revenue</span>
+                                </div>
+                                <div class="nt-card-content">
+                                    <img src="https://via.placeholder.com/400x200" alt="Revenue chart" />
+                                </div>
+                            </div>
+                            <div class="nt-card-default">
+                                <div class="nt-card-header">
+                                    <span class="nt-card-title">User Growth</span>
+                                </div>
+                                <div class="nt-card-content">
+                                    <img src="https://via.placeholder.com/400x200" alt="User growth chart" />
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <!-- Highlighted Tasks -->
                     <section class="nt-section tasks">
-                    <h2>Highlighted Stories</h2>
-                    <!-- Task list items -->
+                        <h2 class="nt-section-title">Highlighted Stories</h2>
+                        <ul class="flex flex-col gap-2 mt-2">
+                            <li>
+                                <label class="nt-checkbox">
+                                    <input type="checkbox" />
+                                    Improve login flow
+                                </label>
+                            </li>
+                            <li>
+                                <label class="nt-checkbox">
+                                    <input type="checkbox" />
+                                    Update documentation
+                                </label>
+                            </li>
+                            <li>
+                                <label class="nt-checkbox">
+                                    <input type="checkbox" />
+                                    Release new version
+                                </label>
+                            </li>
+                        </ul>
                     </section>
 
                     <!-- Team Activities -->
                     <aside class="nt-section team-activities">
-                        <h2>Team Activities</h2>
-                        <!-- Team progress and status -->
+                        <h2 class="nt-section-title">Team Activities</h2>
+                        <div class="flex gap-3 mt-2">
+                            <span class="nt-avatar-wrapper-xs">
+                                <img class="nt-avatar nt-avatar-xs" src="https://via.placeholder.com/40" />
+                                <span class="nt-avatar-status nt-avatar-status--online"></span>
+                            </span>
+                            <span class="nt-avatar-wrapper-xs">
+                                <img class="nt-avatar nt-avatar-xs" src="https://via.placeholder.com/40" />
+                                <span class="nt-avatar-status nt-avatar-status--away"></span>
+                            </span>
+                            <span class="nt-avatar-wrapper-xs">
+                                <img class="nt-avatar nt-avatar-xs" src="https://via.placeholder.com/40" />
+                                <span class="nt-avatar-status nt-avatar-status--busy"></span>
+                            </span>
+                        </div>
                     </aside>
 
                     <!-- Data Grid -->
                     <section class="nt-section data-grid">
-                        <h2>Grid Data</h2>
-                        <!-- Table component -->
+                        <h2 class="nt-section-title">Grid Data</h2>
+                        <div class="nt-card-default mt-2">
+                            <div class="nt-card-content">
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Status</th>
+                                            <th class="text-right">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Order #1001</td>
+                                            <td><span class="nt-badge nt-badge-info">New</span></td>
+                                            <td class="text-right">$500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Order #1002</td>
+                                            <td><span class="nt-badge nt-badge-success">Completed</span></td>
+                                            <td class="text-right">$1,200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Order #1003</td>
+                                            <td><span class="nt-badge nt-badge-warning">Pending</span></td>
+                                            <td class="text-right">$300</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
