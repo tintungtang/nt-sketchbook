@@ -85,6 +85,10 @@ export default defineConfig(() => {
                             return 'integrations/tailwind/index.js'
                         }
 
+                        if (name === 'scripts/index') {
+                            return 'scripts/nt.js'
+                        }
+
                         return '[name].js'
                     },
                     assetFileNames: (assetInfo) => {

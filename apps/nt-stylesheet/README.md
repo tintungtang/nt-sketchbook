@@ -28,8 +28,8 @@ npm install @nashtech/nt-stylesheet
 ### 2. Import in your JavaScript or TypeScript entry file
 
 ```javascript
-import '@nashtech/nt-stylesheet/dist/nt-stylesheet.css'
-import '@nashtech/nt-stylesheet/dist/nt-stylesheet.js'
+import '@nashtech/nt-stylesheet/dist/nt.css'
+import '@nashtech/nt-stylesheet/dist/nt.js'
 ```
 
 ### 3. Or include via CDN in your HTML
