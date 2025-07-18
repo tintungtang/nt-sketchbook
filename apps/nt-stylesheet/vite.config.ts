@@ -32,9 +32,30 @@ export default defineConfig(() => {
                     glob: '*.md'
                 },
                 {
+                    input: './src/fonts',
+                    output: 'fonts',
+                    glob: '**/*'
+                },
+                {
                     input: './examples',
                     output: 'examples',
-                    glob: '*.html'
+                    glob: '**/*'
+                },
+                {
+                    input: '.',
+                    output: '',
+                    glob: 'components-manifest.json'
+                },
+                ,
+                {
+                    input: '.',
+                    output: '',
+                    glob: 'index.html'
+                },
+                {
+                    input: '.',
+                    output: '',
+                    glob: '404.html'
                 }
             ])
         ],
@@ -51,19 +72,15 @@ export default defineConfig(() => {
                 input: {
                     'nt-icons': path.resolve(
                         __dirname,
-                        'src/styles/icon.ts'
+                        'src/styles/_icons.scss'
                     ),
                     nt: path.resolve(
                         __dirname,
-                        'src/styles/index.ts'
+                        'src/styles/_site.scss'
                     ),
                     'scripts/index': path.resolve(
                         __dirname,
                         'src/scripts/index.ts'
-                    ),
-                    'scripts/nt-menu-toggle': path.resolve(
-                        __dirname,
-                        'src/scripts/nt-menu-toggle.ts'
                     ),
                     tailwindIntegrations: path.resolve(
                         __dirname,
@@ -95,11 +112,15 @@ export default defineConfig(() => {
                             return 'integrations/tailwind/style.css'
                         }
 
-                        if (assetInfo.name?.endsWith('nt-icons.css'))
+                        if (
+                            assetInfo.name?.endsWith('nt-icons.css')
+                        ) {
                             return 'css/nt-icons.css'
+                        }
 
-                        if (assetInfo.name?.endsWith('.css'))
+                        if (assetInfo.name?.endsWith('.css')) {
                             return 'css/[name][extname]'
+                        }
 
                         return 'assets/[name][extname]'
                     }
