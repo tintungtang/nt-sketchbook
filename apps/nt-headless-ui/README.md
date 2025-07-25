@@ -6,6 +6,8 @@ A headless UI component library for building accessible and customizable UI comp
 
 To install the package, use one of the following commands:
 
+This package is published on [GitHub Packages](https://github.com/nashtech-garage/nt-sketchbook/pkgs/npm/headless-ui).
+
 ```sh
 # Using npm
 npm install @nashtech/headless-ui

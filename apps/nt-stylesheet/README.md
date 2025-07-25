@@ -21,6 +21,8 @@ This directory contains documentation for the **NT Stylesheet** package, which p
 
 ### 1. Install via npm
 
+This package is published on [GitHub Packages](https://github.com/nashtech-garage/nt-sketchbook/pkgs/npm/stylesheet).
+
 ```bash
 npm install @nashtech/nt-stylesheet
 ```
