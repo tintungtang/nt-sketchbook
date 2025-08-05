@@ -25,20 +25,7 @@ import '@nashtech-garage/nt-stylesheet/dist/nt.css'
 import '@nashtech-garage/nt-stylesheet/dist/nt.js'
 ```
 
-### 3. Or include via CDN in your HTML
-
-```html
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@nashtech-garage/nt-stylesheet/dist/nt-stylesheet.css"
-/>
-<script
-    src="https://cdn.jsdelivr.net/npm/@nashtech-garage/nt-stylesheet/dist/nt-stylesheet.js"
-    defer
-></script>
-```
-
-### 4. Use the CSS classes and design tokens in your components
+### 3. Use the CSS classes and design tokens in your components
 
 Example:
 
