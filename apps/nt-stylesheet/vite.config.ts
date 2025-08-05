@@ -51,6 +51,11 @@ export default defineConfig(() => {
                     input: '.',
                     output: '',
                     glob: 'index.html'
+                },
+                {
+                    input: '.',
+                    output: '',
+                    glob: '404.html'
                 }
             ])
         ],
