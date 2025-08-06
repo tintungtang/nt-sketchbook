@@ -4,6 +4,8 @@ Also known as the NashTech Design System
 
 Welcome to NT Sketchbook, the repository designed to empower designers and developers to bring their creative visions to life with ease and efficiency.
 
+Visit the [NT Sketchbook GitHub Pages site](https://nashtech-garage.github.io/nt-sketchbook/) for a quick overview and getting started guide.
+
 ## Table of Contents
 
 -   [Overview](#Overview)

@@ -1,0 +1,35 @@
+---
+layout: default
+title: NT Sketchbook
+---
+
+![Overview](img-1.png)
+
+Also known as the NashTech Design System.
+
+Welcome to NT Sketchbook, the repository designed to empower designers and developers to bring their creative visions to life with ease and efficiency.
+
+## Overview
+
+NT Sketchbook is your ultimate tool for application development. We provide:
+
+- [NT Stylesheet Docs](https://github.com/nashtech-garage/nt-sketchbook/blob/main/apps/nt-stylesheet/docs/README.md): A CSS framework delivered with NashTech Design Style Guides as the default theme (nt-theme).
+- [NT UI Components](https://github.com/nashtech-garage/nt-sketchbook/blob/main/apps/nt-headless-ui/README.md): A set of prebuilt components including buttons, labels, inputs, etc.
+- Command line interface: Utilities for application scaffolding and component management (coming soon)
+
+![Components](img-2.png)
+
+## Get Started
+
+Join our vibrant community of creators! Your contributions can make a significant impact. Here's how to get involved:
+
+1. **Fork the Repository.**
+2. **Create Your Feature Branch:** Check [GIT](https://github.com/nashtech-garage/nt-sketchbook/blob/main/GIT.md) convention for more details
+3. **Open a Pull Request.**
+
+For detailed guidance, see our [How-Tos](https://github.com/nashtech-garage/nt-sketchbook/blob/main/HOWTOS.md).
+
+## License
+
+This project is proudly licensed under the MIT License. For more details, see the [LICENSE.md](https://github.com/nashtech-garage/nt-sketchbook/blob/main/LICENSE.md) file.
+
