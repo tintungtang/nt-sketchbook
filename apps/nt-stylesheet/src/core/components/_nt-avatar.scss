@@ -28,7 +28,7 @@ $status-offset-right: (
     lg: 0.7rem
 );
 
-@layer  components {
+@layer components {
     .nt-avatar {
         border-radius: 50%;
         object-fit: cover;
@@ -76,4 +76,3 @@ $status-offset-right: (
         }
     }
 }
-

@@ -2,7 +2,7 @@
 @use '../utilities/utilities' as utils;
 @use 'sass:map';
 
-@layer components{
+@layer components {
     .nt-badge {
         @include utils.font-size('sm');
         display: inline-flex;
@@ -54,4 +54,3 @@
         }
     }
 }
-

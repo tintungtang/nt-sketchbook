@@ -2,131 +2,131 @@
 @use 'sass:map';
 @use '../utilities/utilities' as utils;
 @use '../variables' as vars;
+@layer components {
+    $nt-card-variants: (
+        'small': (
+            'bg': vars.$nt-color-white,
+            'border': vars.$nt-border-thin,
+            'width': 21.875rem,
+            'height': 10.75rem
+        ),
+        'default': (
+            'bg': vars.$nt-color-white,
+            'border': vars.$nt-border-thin
+        ),
+        'success': (
+            'bg': vars.$nt-background-success,
+            'border': vars.$nt-border-success
+        ),
+        'primary': (
+            'bg': vars.$nt-background-success,
+            'border': vars.$nt-border-success
+        ),
+        'danger': (
+            'bg': vars.$nt-background-danger,
+            'border': vars.$nt-border-danger
+        )
+    );
 
+    @mixin nt-card(
+        $border-radius: vars.$nt-border-radius-md,
+        $padding: vars.$nt-spacing-md,
+        $gap: 0.5rem
+    ) {
+        @each $variant, $styles in $nt-card-variants {
+            .nt-card-#{$variant} {
+                display: flex;
+                flex-direction: column;
 
-$nt-card-variants: (
-    'small': (
-        'bg': vars.$nt-color-white,
-        'border': vars.$nt-border-thin,
-        'width': 21.875rem,
-        'height': 10.75rem
-    ),
-    'default': (
-        'bg': vars.$nt-color-white,
-        'border': vars.$nt-border-thin
-    ),
-    'success': (
-        'bg': vars.$nt-background-success,
-        'border': vars.$nt-border-success
-    ),
-    'primary': (
-        'bg': vars.$nt-background-success,
-        'border': vars.$nt-border-success
-    ),
-    'danger': (
-        'bg': vars.$nt-background-danger,
-        'border': vars.$nt-border-danger
-    )
-);
+                // grid-template-rows: auto 1fr auto;
+                background-color: map.get($styles, 'bg');
+                border: 0.0625rem solid map.get($styles, 'border');
+                border-radius: $border-radius;
+                padding: $padding;
+                gap: $gap;
 
-@mixin nt-card(
-    $border-radius: vars.$nt-border-radius-md,
-    $padding: vars.$nt-spacing-md,
-    $gap: 0.5rem
-) {
-    @each $variant, $styles in $nt-card-variants {
-        .nt-card-#{$variant} {
-            display: flex;
-            flex-direction: column;
+                @if map.has-key($styles, 'width') {
+                    max-width: map.get($styles, 'width');
+                }
 
-            // grid-template-rows: auto 1fr auto;
-            background-color: map.get($styles, 'bg');
-            border: 0.0625rem solid map.get($styles, 'border');
-            border-radius: $border-radius;
-            padding: $padding;
-            gap: $gap;
-
-            @if map.has-key($styles, 'width') {
-                max-width: map.get($styles, 'width');
+                @if map.has-key($styles, 'height') {
+                    max-height: map.get($styles, 'height');
+                }
             }
-
-            @if map.has-key($styles, 'height') {
-                max-height: map.get($styles, 'height');
-            }
-        }
-    }
-
-    .nt-card-icon {
-        width: 2rem;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 1.5rem;
-    }
-
-    .nt-card-content-column {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .nt-card-header {
-        display: flex;
-        flex-direction: row;
-        grid-template-columns: auto 1fr auto;
-
-        .nt-card-description {
-            font-weight: vars.$nt-font-weight-regular;
-            color: vars.$nt-color-gray-70;
-
-            @include utils.font-size('xs');
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .nt-card-title {
-            font-weight: vars.$nt-font-weight-bold;
-            color: vars.$nt-color-gray-100;
-
-            @include utils.font-size('sm');
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .nt-card-actions {
+        .nt-card-icon {
+            width: 2rem;
+            height: 100%;
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: $gap;
-            margin-left: auto;
+            margin-right: 1.5rem;
+        }
 
-            .nt-card-action {
-                cursor: pointer;
-                width: 1.25rem;
-                height: 1.25rem;
+        .nt-card-content-column {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .nt-card-header {
+            display: flex;
+            flex-direction: row;
+            grid-template-columns: auto 1fr auto;
+
+            .nt-card-description {
+                font-weight: vars.$nt-font-weight-regular;
+                color: vars.$nt-color-gray-70;
+
+                @include utils.font-size('xs');
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .nt-card-title {
+                font-weight: vars.$nt-font-weight-bold;
                 color: vars.$nt-color-gray-100;
 
                 @include utils.font-size('sm');
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
+
+            .nt-card-actions {
+                display: flex;
+                align-items: center;
+                gap: $gap;
+                margin-left: auto;
+
+                .nt-card-action {
+                    cursor: pointer;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    color: vars.$nt-color-gray-100;
+
+                    @include utils.font-size('sm');
+                }
+            }
+        }
+
+        .nt-card-content {
+            padding: 0.5rem 0;
+            display: flex;
+            height: 100%;
+            align-items: center;
+
+            @include utils.font-size('sm');
+        }
+
+        .nt-card-footer {
+            padding-top: 0.5rem;
+            text-align: right;
+
+            @include utils.font-size('sm');
         }
     }
 
-    .nt-card-content {
-        padding: 0.5rem 0;
-        display: flex;
-        height: 100%;
-        align-items: center;
-
-        @include utils.font-size('sm');
-    }
-
-    .nt-card-footer {
-        padding-top: 0.5rem;
-        text-align: right;
-
-        @include utils.font-size('sm');
-    }
+    @include nt-card;
 }
-
-@include nt-card;
