@@ -1,0 +1,40 @@
+@use '../variables' as variables;
+
+@mixin prefix-class($prefix, $name) {
+    .#{$prefix}-#{$name} {
+        @content;
+    }
+}
+
+@mixin create-theme(
+    $theme-name,
+    $bg-color: variables.$nt-color-primary-10,
+    $text-color: variables.$nt-text-primary,
+    $primary: variables.$nt-color-primary-100,
+    $secondary: variables.$nt-color-secondary-100
+) {
+
+}
+
+@mixin material-icon(
+    $size: 24px,
+    $color: currentColor,
+    $margin: 0,
+    $align: middle
+) {
+    display: inline-block;
+    font-family: 'Material Icons', serif;
+    font-size: $size;
+    color: $color;
+    vertical-align: $align;
+    margin: $margin;
+    line-height: 1;
+    user-select: none;
+}
+
+@mixin nt-text-style($size, $weight: 400, $lh: md, $spacing: normal) {
+    font-size: var(--nt-font-size-#{$size});
+    font-weight: $weight;
+    line-height: var(--nt-line-height-#{$lh});
+    letter-spacing: var(--nt-letter-spacing-#{$spacing});
+}

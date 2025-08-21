@@ -5,7 +5,6 @@ import postcssPresetEnv from 'postcss-preset-env'
 const config = {
     plugins: {
         autoprefixer: {},
-        tailwindcss: {},
         'postcss-nesting': postcssNesting(),
         'postcss-preset-env': postcssPresetEnv({
             stage: 1,

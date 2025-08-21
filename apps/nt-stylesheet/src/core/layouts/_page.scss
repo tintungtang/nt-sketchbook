@@ -1,0 +1,136 @@
+@use '../animation' as effects;
+@use '../variables' as vars;
+@use '../utilities/utilities' as utils;
+
+@mixin nt-page {
+    @layer layouts {
+        .nt-page {
+            display: grid;
+            grid-template-rows: auto auto auto 1fr;
+            grid-template-areas:
+            'nt-page-header'
+            'nt-page-bookmarks'
+            'nt-page-filters'
+            'nt-page-body';
+
+            &-header {
+                grid-area: nt-page-header;
+                display: grid;
+                grid-template-columns: auto 15rem;
+                grid-template-areas:
+                'nt-title nt-header-actions'
+                'nt-sub-title nt-header-actions';
+
+                .nt-title {
+                    @include utils.font-size('2xl');
+                    grid-area: nt-title;
+                    font-weight: bold;
+                    color: vars.$nt-text-body;
+                }
+
+                .nt-sub-title {
+                    grid-area: nt-sub-title;
+
+                    @include utils.font-size('md');
+                    font-weight: vars.$nt-font-weight-light;
+                    color: vars.$nt-color-gray-50;
+                }
+
+                &-actions {
+                    grid-area: nt-header-actions;
+                }
+
+                &-btn {
+                    background: var(--nt-primary, #007bff);
+                    color: vars.$nt-color-white;
+                    border: none;
+                    padding: vars.$nt-spacing-xs vars.$nt-spacing-md;
+                    cursor: pointer;
+                    border-radius: vars.$nt-border-radius-sm;
+
+                    &:hover {
+                        background: var(--nt-primary-dark, #0056b3);
+                    }
+                }
+            }
+
+            &-bookmarks {
+                grid-area: nt-page-bookmarks;
+                display: flex;
+                gap: vars.$nt-spacing-xs;
+                margin-top: vars.$nt-spacing-md;
+
+                &-btn {
+                    background: var(--nt-secondary, #6c757d);
+                    color: vars.$nt-color-white;
+                    border: none;
+                    padding: vars.$nt-spacing-xs vars.$nt-spacing-md;
+                    cursor: pointer;
+                    border-radius: vars.$nt-border-radius-sm;
+
+                    &:hover {
+                        background: var(--nt-secondary-dark, #5a6268);
+                    }
+                }
+            }
+
+            &-filters {
+                grid-area: nt-page-filters;
+                background: var(--nt-bg-filters, vars.$nt-bg-light);
+                padding: vars.$nt-spacing-md;
+                border-radius: vars.$nt-border-radius-sm;
+                margin-top: vars.$nt-spacing-md;
+
+                &-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                &-title {
+                    @include utils.font-size('lg');
+                    font-weight: bold;
+                }
+
+                &-toggle {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+
+                    @include utils.font-size('lg');
+                }
+
+                &-content {
+                    margin-top: vars.$nt-spacing-xs;
+                }
+            }
+
+            &-body {
+                grid-area: nt-page-body;
+                background: var(--nt-bg-body, vars.$nt-bg-body);
+                border-radius: vars.$nt-border-radius-sm;
+                margin-top: vars.$nt-spacing-md;
+            }
+
+            &-section {
+                margin-bottom: 2rem;
+
+                &-title {
+                    @include utils.font-size('xl');
+                }
+
+                &-content {
+                    @include utils.font-size('md');
+                }
+            }
+        }
+
+        .nt-page-filters,
+        .nt-page-bookmarks,
+        .nt-page-header,
+        .nt-page-body {
+            @include effects.fade-in;
+        }
+    }
+
+}

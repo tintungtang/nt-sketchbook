@@ -1,0 +1,28 @@
+/* =========================
+   Base Layer Entry
+   ========================= */
+
+/* 1. Pull in design tokens (CSS vars) */
+@use "tokens.scss";
+
+/* 2. Fonts (no @layer, since @font-face rules are global) */
+@use "fonts.scss";
+
+/* 3. Typography (headings, body, inline elements, links) */
+@use "typography.scss";
+
+/* 4. Other base-level styles (if you want)
+   e.g. form element defaults, code styles, blockquotes */
+@layer nt-base {
+    input, textarea, select, button {
+        font: inherit;
+        color: inherit;
+    }
+
+    blockquote {
+        border-inline-start: 4px solid var(--nt-color-border, #ccc);
+        padding-inline-start: 1rem;
+        color: var(--nt-color-text-muted, #666);
+        font-style: italic;
+    }
+}
