@@ -1,16 +1,17 @@
 @use '../variables' as vars;
 @use '../utilities/utilities' as utils;
 @use 'sass:map';
+@layer components {
+    .nt-label {
+        font-size: map.get(utils.$nt-font-sizes, 'md');
 
-.nt-label {
-    font-size: map.get(utils.$nt-font-sizes, 'md');
+        &-hint {
+            color: vars.$nt-text-description;
+        }
 
-    &-hint {
-        color: vars.$nt-text-description;
-    }
-
-    &-form-field {
-        color: vars.$nt-text-body;
-        font-weight: vars.$nt-font-weight-bold;
+        &-form-field {
+            color: vars.$nt-text-body;
+            font-weight: vars.$nt-font-weight-bold;
+        }
     }
 }

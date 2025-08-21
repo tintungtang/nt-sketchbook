@@ -1,24 +1,25 @@
 @use '../variables' as vars;
+@layer components {
+    @mixin nt-book-marks() {
+        padding: 0.5rem 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-weight: bold;
+        border-bottom: 0.125rem solid transparent;
 
-@mixin nt-book-marks() {
-    padding: 0.5rem 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-bottom: 0.125rem solid transparent;
-
-    &.active {
-        color: vars.$nt-text-primary;
-        border-bottom: 0.125rem solid vars.$nt-color-primary-100;
+        &.active {
+            color: vars.$nt-text-primary;
+            border-bottom: 0.125rem solid vars.$nt-color-primary-100;
+        }
     }
-}
 
-.nt-page-bookmarks {
-    display: flex;
-    gap: 1rem;
-    padding: 0.75rem;
-    border-bottom: 0.0625rem solid vars.$nt-border-bold;
+    .nt-page-bookmarks {
+        display: flex;
+        gap: 1rem;
+        padding: 0.75rem;
+        border-bottom: 0.0625rem solid vars.$nt-border-bold;
 
-    @include nt-book-marks;
+        @include nt-book-marks;
+    }
 }
