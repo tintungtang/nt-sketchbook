@@ -25,8 +25,8 @@ const stripDirs = (nameOrPath: string) =>
 /** Build inputs programmatically */
 export function makeInputs(): EntryMap {
     const entries: EntryMap = {
-        'nt-icons': path.resolve(ROOT, 'src/styles/_icons.scss'),
-        nt: path.resolve(ROOT, 'src/styles/_site.scss'),
+        'nt-icons': path.resolve(ROOT, 'src/core/_icons.scss'),
+        nt: path.resolve(ROOT, 'src/index.scss'),
         'scripts/index': path.resolve(ROOT, 'src/scripts/index.ts'),
         tailwindIntegrations: path.resolve(
             ROOT,
@@ -49,7 +49,7 @@ export function makeInputs(): EntryMap {
             const entry = path.resolve(
                 themesDir,
                 folder,
-                '_index.scss'
+                'index.scss'
             )
             if (fileExists(entry)) {
                 entries[folder] = entry
@@ -71,7 +71,7 @@ export function makeInputs(): EntryMap {
             const entry = path.resolve(
                 brandingDir,
                 folder,
-                '_index.scss'
+                'index.scss'
             )
             if (fileExists(entry)) {
                 entries[`branding/${folder}`] = entry
@@ -107,12 +107,12 @@ export function assetFileNames(assetInfo: PreRenderedAsset): string {
         return 'integrations/tailwind/style.css'
     }
 
-    // Themes: nt-theme-X/_index.scss -> themes/nt-theme-X.css
+    // Themes: nt-theme-X/index.scss -> themes/nt-theme-X.css
     if (name.includes('nt-theme') && ext === '.css') {
         return `themes/${basename}${ext}`
     }
 
-    // Branding: branding/X/_index.scss -> branding/X.css
+    // Branding: branding/X/index.scss -> branding/X.css
     if (name.includes('branding') && ext === '.css') {
         return `branding/${basename}${ext}`
     }

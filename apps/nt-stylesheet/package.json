@@ -18,7 +18,6 @@
         "bin",
         "themes",
         "main.ts",
-        "tailwind.config.js",
         "postcss.config.js",
         "LICENSE",
         "README.md",
